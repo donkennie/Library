@@ -1,4 +1,6 @@
+using LibraryData;
 using LibraryData.ApplicationDbContext;
+using LibraryServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,8 @@ namespace Library
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<ILibraryAsset, LibraryAssetService>();
 
             services.AddControllersWithViews();
 
