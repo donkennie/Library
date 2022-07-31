@@ -57,7 +57,7 @@ namespace LibraryServices
             //Otherwise
              /// var isBook = _context.LibraryAssets.OfType<Book>().Where(a => a.Id == id).Any();
 
-             return "";
+             return ""; 
         }
 
         public string GetIsbn(int id)
